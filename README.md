@@ -1,3 +1,10 @@
+# Blogmon
+## 개발/운영 빌드 시 environment-$.yml 을 통해 실행 및 빌드
+* 개발 : `bundle exec jekyll serve --config _config.yml,_environmet-prod.yml`
+* 운영 : `bundle exec jekyll build --config _config.yml,_environmet-prod.yml`
+
+---
+
 # WhatATheme
 **WhatATheme** is a customizable Jekyll Portfolio theme which supports blogging. You can use this theme in order to create an elegant, fully responsive portfolio.
 
