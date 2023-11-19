@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+
+<body>
+    {% include navbar.html %}
+
+    <!--Main Section-->
+    <div id="address-section">
+        <div class="section">
+            {% include searchaddress.html %}
+        </div>
+        <section class="hero is-small is-success" id="address-section-1">
+            <div class="hero-body">
+                <p class="title">
+                    NAVER 결과
+                </p>
+            </div>
+            <div id="results-container">
+                {% include address-result-api1.html %}
+            </div>
+        </section>
+        <section class="hero is-small is-warning" id="address-section-2">
+            <div class="hero-body">
+                <p class="title">
+                    KAKAO 결과
+                </p>
+            </div>
+            <div id="results-container">
+                {% include address-result-api2.html %}
+            </div>
+        </section>
+    </div>
+
+    <!--Footer-->
+    {% include footer.html %}
+
+</body>
+
+<script src="{{site.baseurl}}/assets/js/address.js"></script>
+
+</html>

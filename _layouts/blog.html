@@ -19,7 +19,9 @@ layout: compress
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% include blog-card.html %}
+        {% if post.posttype != 'project' %}
+        {% include blog-card.html %}
+        {% endif %}
         {% endfor %}
         </div>
     </section>

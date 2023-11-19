@@ -353,3 +353,41 @@ a.navbar-item.is-active {
         }
     }
 }
+
+#address-section {
+    .hero-body {
+        padding: 1.0rem 1.0rem;
+    }
+
+    .section {
+        padding: 4rem 1.5rem 2rem 1.5rem;
+    }
+
+    #address-table-api1 {
+        background-color: hsl(142, 52%, 96%)
+    }
+
+    #address-table-api2 {
+        background-color: hsl(48, 100%, 96%)
+    }
+
+    .level {
+        margin: 0rem 0rem 0.4rem 0rem;
+    }
+}
+
+#address-info-modal {
+    
+    .modal-content {
+        max-width: fit-content;
+        width: fit-content;
+    }
+}
+
+#address-info-button {
+    
+    .button {
+        margin: auto;
+        display: block;
+    }
+}

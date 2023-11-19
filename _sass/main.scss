@@ -1,6 +1,25 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css');
+
+// Variables
+$baseurl: "";
+
+// English Font
+@font-face {
+    font-family: 'Poppins';
+    src: url($baseurl + "/assets/fonts/Poppins-Medium.ttf");
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+// Korean Font
+@font-face {
+    font-family: "Poppins";
+    src: url($baseurl + "/assets/fonts/NotoSansKR-Medium.ttf");
+    font-style: normal;
+    unicode-range: U+AC00-D7A3, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
 
 
 html,
@@ -10,6 +29,10 @@ body {
     transition: all 0.25s ease;
 }
 
+button,
+input {
+    font-family: 'Poppins', sans-serif;
+}
 
 
 /* width */
@@ -71,4 +94,8 @@ hr {
             text-decoration: underline;
         }
     }
+}
+
+.modal-content {
+    width: 330px;
 }
