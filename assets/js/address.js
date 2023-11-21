@@ -5,7 +5,7 @@ layout: null
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
   function openModal($el) {
-    $el.classList.add('is-active');const API_SERVER_NA_URL = 'http://3.38.61.176:5050/searchaddr1';
+    $el.classList.add('is-active');
   }
 
   function closeModal($el) {
