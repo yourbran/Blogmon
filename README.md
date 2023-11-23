@@ -1,7 +1,7 @@
 # Blogmon
 ## 개발/운영 빌드 시 environment-$.yml 을 통해 실행 및 빌드
-* 개발 : `bundle exec jekyll serve --config _config.yml,_environmet-prod.yml`
-* 운영 : `bundle exec jekyll build --config _config.yml,_environmet-prod.yml`
+* 개발 : `bundle exec jekyll serve --config _config.yml,_environment-dev.yml`
+* 운영 : `bundle exec jekyll build --config _config.yml,_environment-prod.yml`
 
 ---
 
