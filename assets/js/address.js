@@ -58,15 +58,16 @@ function searchaddress() {
   const store = document.getElementById("search-input");
   const tbody1 = document.getElementById("address-tbody-api1");
   const tbody2 = document.getElementById("address-tbody-api2");
+  const addresskey = document.getElementById("addresskey-input");
 
   let pJson = {};
   pJson.name = store.value;
+  pJson.addressAuthKey = addresskey.value;
   
   if(!store.value) {
     let msg = "가게명을 입력하시기 바랍니다.";
     console.log(msg);
   } else {
-    console.log(JSON.stringify(pJson));
     
     // init
     createProgressBar(1);
@@ -77,33 +78,37 @@ function searchaddress() {
     //ajax POST
     $.ajax({
       type: 'POST',
-      // url: 'http://localhost:5000/searchaddr1',
-      //url: 'http://3.38.61.176:5050/searchaddr1',
       url: "{{ site.API_SERVER_URL }}" + "/searchaddr1",
       contentType: 'application/json',
       dataType: 'JSON',
       data: JSON.stringify(pJson),
       success: function(res){
-        generateTableOfApi(res, "api1");
+        if(res.errCd == "000") {
+          generateTableOfApi(res, "api1");
+        } else {
+          generateFailTableOfApi(res.errMsg, "api1");
+        }
       },
       error: function(err){
-        console.log(err);    //에러가 발생하면 콘솔 로그를 찍어준다. 
+        generateFailTableOfApi("조회실패", "api1");
       }
     });
 
     $.ajax({
       type: 'POST',
-      // url: 'http://127.0.0.1:5000/searchaddr2',
-      //url: 'http://3.38.61.176:5050/searchaddr2',
       url: "{{ site.API_SERVER_URL }}" + "/searchaddr2",
       contentType: 'application/json',
       dataType: 'JSON',
       data: JSON.stringify(pJson),
       success: function(res){
-        generateTableOfApi(res, "api2");
+        if(res.errCd == "000") {
+          generateTableOfApi(res, "api2");
+        } else {
+          generateFailTableOfApi(res.errMsg, "api2");
+        }
       },
       error: function(err){
-        console.log(err);    //에러가 발생하면 콘솔 로그를 찍어준다. 
+        generateFailTableOfApi("조회실패", "api2");
       }
     });
   }
@@ -148,6 +153,46 @@ function generateTableOfApi(data, cls) {
     newCell6.appendChild(document.createTextNode(addresses[idx].reviewsNum));
     newCell4.addEventListener('click', ()=>buttonClickHandler(newCell3.textContent));
   }
+
+  // progressbar 제거
+  if(cls == "api1") {
+    removeProgressBar(1);
+  } else {
+    removeProgressBar(2);
+  }
+}
+
+function generateFailTableOfApi(msg, cls) {
+  
+  let addressTableEl = "address-table-" + cls;
+  let addressTbodyEl = "address-tbody-" + cls;
+
+  const table = document.getElementById(addressTableEl);
+  const tbody = document.getElementById(addressTbodyEl);
+  const tableCnt = table.rows.length;
+  const tbodyCnt = tableCnt-1;
+  // 기존 테이블 제거
+  if(tableCnt > 1) {
+    for(var i = tbodyCnt-1; i >= 0; i--) {
+      tbody.deleteRow(i);
+    }
+  } 
+  
+  // 신규 테이블 생성
+  let newRow = tbody.insertRow();
+  let newCell1 = newRow.insertCell();
+  let newCell2 = newRow.insertCell();
+  let newCell3 = newRow.insertCell();
+  let newCell4 = newRow.insertCell();
+  let newCell5 = newRow.insertCell();
+  let newCell6 = newRow.insertCell();
+
+  newCell1.appendChild(document.createTextNode(msg));
+  newCell2.appendChild(document.createTextNode('조회실패'));
+  newCell3.appendChild(document.createTextNode('조회실패'));
+  newCell4.appendChild(document.createTextNode('조회실패'));
+  newCell5.appendChild(document.createTextNode('조회실패'));
+  newCell6.appendChild(document.createTextNode('조회실패'));
 
   // progressbar 제거
   if(cls == "api1") {
