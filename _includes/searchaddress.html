@@ -1,4 +1,9 @@
 <nav class="level">
+    <div id="address-info-button">
+        <button class="js-modal-trigger button is-info is-small has-text-centered" data-target="address-info-modal">
+            이용가이드
+        </button>
+    </div>
     <div class="level-item has-text-centered">
         <div class="field has-addons has-text-weight-medium has-text-grey" id="search">
             <p class="control">
@@ -12,10 +17,14 @@
             </p>
         </div>
     </div>
-    <div id="address-info-button">
-        <button class="js-modal-trigger button is-info is-small has-text-centered" data-target="address-info-modal">
-            이용가이드
-        </button>
+    <div id="address-key" class="control">
+        <p class="control has-icons-left">
+            <input id="addresskey-input" class="input is-small" type="password" placeholder="Password"
+                autocomplete="off">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
+        </p>
     </div>
 </nav>
 
