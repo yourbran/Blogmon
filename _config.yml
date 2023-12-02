@@ -2,12 +2,12 @@
 markdown: kramdown
 
 # URL of the Site
-url: http://3.38.61.176:4040
+url: http://blog.bouldermon.com
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
 baseurl: 
 
 # Title of the Site
-title: BlogMon
+title: Blogmon
 # Description of the Site
 description: 볼더몬스터 이야기
 #description: 볼더몬스터 블로그
