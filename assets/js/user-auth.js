@@ -16,7 +16,7 @@ var poolData = {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Verify User Session
-    console.log("[user-auth.js] addEventListener : " + idToken);
+    // console.log("[user-auth.js] addEventListener : " + idToken);
     
 });
 
@@ -24,6 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 If user has logged in before, get the previous session so user doesn't need to log in again.
 */
 function getCurrentLoggedInSession(){
-    console.log("[user-auth.js] getCurrentLoggedInSession : " + idToken);
+    // console.log("[user-auth.js] getCurrentLoggedInSession : " + idToken);
     //idToken = 'Init';
 }
