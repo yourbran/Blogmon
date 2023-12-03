@@ -145,3 +145,19 @@ Python버전에 맞게 devel 라이브러리를 다운받은 후 Python3로 uwsg
 10. *Create records*
 
 * * *
+
+# SSL 적용
+### ACM이용한 인증서 발급
+1. ACM 접속 후 *Request*
+2. *Certificate type : Request a public certificate* 클릭 후 Next
+3. Fully qualified domain name : *\*.bouldermon.com*
+4. Validation method : *DNS validation  recommanded*
+5. Key algorithm : *RSA 2048*
+6. Request
+7. *Create record in Route 53*
+8. Create record
+
+### ALB(Application Load Balancer) 생성
+
+
+* * *
