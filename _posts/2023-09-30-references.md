@@ -22,6 +22,8 @@ tags:
 ### 로컬 개발을 위한 config 설정
 #### `bundle exec jekyll serve --config _config.yml,_environment-dev.yml`
 #### `bundle exec jekyll serve --config _config.yml,_environment-prod.yml`
+#### `bundle exec jekyll build --config _config.yml,_environment-dev.yml`
+#### `bundle exec jekyll build --config _config.yml,_environment-prod.yml`
 Jekyll은 여러개의 configuration file을 지정할 수 있도록 되어있으며, 두 번째 설정의 선언이 첫 번째 설정을 덮어쓴다.
 개발기 테스트를 위해서 `_config-local.yml`의 *url*항목을 빈칸으로 설정한다.
 
@@ -127,19 +129,19 @@ Python버전에 맞게 devel 라이브러리를 다운받은 후 Python3로 uwsg
 ### selenium 설치
 #### `pip3 install selenium`
 
-### Nginx conf 컴파일
-#### `nginx -t`
+* * *
 
-### Nginx conf 동적반영
-#### `nginx -s reload`
+# Route 53 domain 등록
+### Lightsail ↔ Route 53 연결
+1. Lightsail에서 *static IP* 등록
+2. *static IP*를 Lightsail Instance에 연결
+3. Route 53 Hosted zones에서 등록한 도메인 클릭
+4. *Create record*
+5. *subdomain*입력
+6. *Record type* : A - Routes traffic to an IPv4 address and som AWS resources
+7. *Value* : Lightsail Instance의 *Static IP*입력
+8. *TTL* : 300
+9. *Routing policy* : Simple routing
+10. *Create records*
 
-### Nginx 중지
-#### `nginx -s stop`
-
-### Nginx ajax CORS 조치
-예비요청은 `location /`로, 실제 플라스크 API 수신은 `location @app`으로 들어오므로, 두 군데 모두 CORS 대응 설정을 지정해주어야 한다.
-`proxy_hide_header Access-Control-Allow-Origin;`
-`proxy_hide_header Access-Control-Allow-Methods;`
-`add_header Access-Control-Allow-Origin 'http://3.38.61.176:4040';`
-`add_header Access-Control-Allow-Methods 'OPTIONS, POST';`
-`add_header Access-Control-Allow-Headers 'Content-Type';`
+* * *
