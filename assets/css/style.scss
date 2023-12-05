@@ -330,6 +330,12 @@ a.navbar-item.is-active {
                 max-width: calc(100% - 5vw);
             }
         }
+        img + em { // 이미지 캡션을 위한 css
+            display: block;
+            text-align: center;
+            font-size: .8rem;
+            color: grey;
+          }
         ul, ol {
             display: inline-block;
         }
