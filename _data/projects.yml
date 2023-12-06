@@ -1,18 +1,18 @@
-- name: Atlassian Bitbucket&Bamboo 도입
+- name: Bitbucket&Bamboo 도입
   link: /project/cicdupgrade2023
-  image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
-  description: 사내 표준CI/CD도입으로 인한 Gitlab&Jenkins로부터 Bitbucket&Bamboo 전환
+  image: /assets/images/20231024_cicdupgrade2023/CI_CD_pipeline_image_front.png
+  description: 사내 표준 CI/CD 도입
 - name: Kiosk API서버 인프라 구성
   link: /project/kioskapiprj
-  image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
+  image: /assets/images/20230108_kioskPrj/kioskPrj_front.png
   description: 신규 API서버 도입에 따른 설계 및 구현
 - name: PDA 고도화 프로젝트
   link: /project/pdaprj2021
-  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  image: /assets/images/20230208_pdaprj2021/pdaPrj_front.png
   description: PL로서 투입됬던 첫번째 프로젝트로 당시 과업내역 정리
 - name: 개발 참고사항
   link: /project/references
-  image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
+  image: /assets/images/202309130_references/references_front.png
   description: 블로그 기술스택 및 명령어 참고사항
 - name: Test Page
   link: /project/testpage

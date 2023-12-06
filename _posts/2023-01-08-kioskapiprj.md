@@ -3,7 +3,7 @@ title: Kiosk API 서버 인프라 구성
 layout: post
 permalink: /project/kioskapiprj
 posttype: project
-post-image: https://raw.githubusercontent.com/thedevslot/WhatATheme/master/assets/images/How%20to%20install%20and%20use%20WhatATheme.png?token=AHMQUEPHRKQFL5FS624RDJ26Z64HK
+post-image: /assets/images/20230108_kioskPrj/kioskPrj_front.png
 description: API서버를 신규로 도입함에 따라 인프라를 어떻게 설계했고 어플리케이션을 어떻게 구동시켰는지 설명합니다.
 tags:
 - 인프라
