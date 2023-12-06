@@ -3,7 +3,7 @@ title: 개발 참고자료
 layout: post
 permalink: /project/references
 posttype: project
-post-image: "https://raw.githubusercontent.com/thedevslot/WhatATheme/master/assets/images/What%20is%20Jekyll%20and%20How%20to%20use%20it.png?token=AHMQUELVG36IDSA4SZEZ5P26Z64IW"
+post-image: /assets/images/202309130_references/references_front.png
 description: 참고 명령어 및 레퍼런스
 tags:
 - dev
