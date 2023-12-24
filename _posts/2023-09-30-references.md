@@ -59,11 +59,19 @@ Jekyll은 여러개의 configuration file을 지정할 수 있도록 되어있�
 # Docker
 ### Dockerfile 작성
 
+- 이미지 파일 : python:3.7
+- 
+
+#### 서비스계정 생성 및 지정
+
+#### Docker Applicatoin log를 Host directory에 연결
+
+
 ### Docker Build
 > #### docker build -t *REPOSITORY*:*VERSION* *PATH*
 
 `Dockerfile` 작성 후 `docker build`를 통해 이미지 생성한다. `version`을 입력하지 않을 경우 `latest`가 default로 입력된다.
-#### `docker build -t flaskapi .`
+#### `docker build -t flaskapi:20231223 .`
 
 ### Docker 컨테이너 구동
 > #### docker run \[options\] *IMAGE* \[command\] \[arg...\]
@@ -74,7 +82,7 @@ docker 컨테이너를 실행한다. \[OPTIONS\] 종류는 아래와 같다.
 * `-d` : 동작방식을 백그라운드로 설정하는 옵션
 
 
-`docker run -d -p 0.0.0.0:5000:5000/tcp --name apiserver flaskapi:latest`
+`docker run -d -p 0.0.0.0:5000:5000/tcp --name apiserver flaskapi:20231223`
 
 ### Docker 프로세스 확인
 현재 구동중인 도커 프로세스를 확인하기 위해선 `docker ps` 혹은 `doscker ps -a`를 이용한다.
@@ -115,8 +123,37 @@ Docker 프로세스 명령어를 통해 확인된 *IMAGEID*를 통해 도커 이
 * * *
 
 # uWSGI
-### uwsgi.ini 설정
+### uWSGI 설치
 Python버전에 맞게 devel 라이브러리를 다운받은 후 Python3로 uwsgi설치가 필요하다. Python 가상환경이 Python3 기준이라면 pip3 list에서 **uWSGI**가 조회되어야 한다.
+
+### 배포환경별 INI 설정
+개발서버와 운영서버에 적용되어야 하는 설정들이 다르므로 각 스테이지에 맞게 옵션을 분기하여 처리했다. uWSGI 공식문서에 따라 [환경변수(Environment variables)](https://uwsgi-docs.readthedocs.io/en/latest/Configuration.html#environment-variables)와 [if-env문(Configuration logic)](https://uwsgi-docs.readthedocs.io/en/latest/ConfigLogic.html#if-env)을 이용하여 개발/운영 서버에 적용될 설정들을 분리했다.
+
+개발서버에서는 uWSGI를 실행할 때 환경변수를 전달시킨다. 참고로 환경변수명은 `UWSGI_`로 시작되어야한다.
+```bash
+# 환경변수 전달 후 실행하는 CASE
+UWSGI_DEVENV=dev uwsgi --ini uwsgi.ini 
+
+# 환경변수 없이 실행하는 CASE
+uwsgi --ini uwsgi.ini 
+```
+<br/>
+전달받은 환경변수가 존재할 경우 `if-env` 구문을 통해 개발서버용 설정이 적용되며, 존재하지 않은 경우 `if-not-env`를 통해 운영서버용 설정이 적용된다.
+
+```ini
+[uwsgi]
+
+# %(_) 는 context-placeholder로, 입력된 환경변수의 값이 출력
+if-env = UWSGI_DEVENV
+print = current uwsgi environment is %(_)
+endif =
+
+# uwsgi 실행 시 IWSGU_DEVENV환경변수를 전달받지 못했을 경우 실행
+if-not-env = UWSGI_DEVENV
+print = current uwsgi environment is production
+endif =
+```
+
 
 * * *
 
@@ -156,8 +193,5 @@ Python버전에 맞게 devel 라이브러리를 다운받은 후 Python3로 uwsg
 6. Request
 7. *Create record in Route 53*
 8. Create record
-
-### ALB(Application Load Balancer) 생성
-
 
 * * *
