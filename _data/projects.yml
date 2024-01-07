@@ -1,6 +1,6 @@
 - name: MSA환경 API서버 구축
   link: /project/flaskapiserver
-  image: /assets/images/20231229_flaskanddocker/thumbnail.jpg/assets/images/20231229_flaskanddocker/thumbnail.jpg
+  image: /assets/images/20231229_flaskanddocker/thumbnail.jpg
   description: Flask + Docker를 이용한 API서버 구축
 - name: Bitbucket&Bamboo 도입
   link: /project/cicdupgrade2023
