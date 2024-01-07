@@ -71,7 +71,7 @@ Jekyll은 여러개의 configuration file을 지정할 수 있도록 되어있�
 > #### docker build -t *REPOSITORY*:*VERSION* *PATH*
 
 `Dockerfile` 작성 후 `docker build`를 통해 이미지 생성한다. `version`을 입력하지 않을 경우 `latest`가 default로 입력된다.
-#### `docker build -t flaskapi:20231223 .`
+#### `docker build -t prodflaskapi:20231228 .`
 
 ### Docker 컨테이너 구동
 > #### docker run \[options\] *IMAGE* \[command\] \[arg...\]
@@ -81,8 +81,14 @@ docker 컨테이너를 실행한다. \[OPTIONS\] 종류는 아래와 같다.
 * `--name` : 컨테이너 이름을 설정하는 옵션
 * `-d` : 동작방식을 백그라운드로 설정하는 옵션
 
+nginx와 docker간 UNIX socket 통신을 위해 docker 구동 시 volume을 설정한다.
+* `-v {localPath}:{containerPath}`
 
-`docker run -d -p 0.0.0.0:5000:5000/tcp --name apiserver flaskapi:20231223`
+UNIX socket 통신으로 진행하기때문에 Docker 컨테이너에서 PORT를 열지 않는다.
+
+`docker run -d --user 1000 --name devFlaskApi -v /home/ec2-user/app/devApiServer/socket:/flaskapi/socket -v /home/ec2-user/app/devApiServer/logs:/flaskapi/logs flaskapi:20231227`
+
+docker run -d --user 1000 --name prodflaskApi -v /home/ec2-user/app/apiServer/socket:/flaskapi/socket -v /home/ec2-user/app/apiServer/logs:/flaskapi/logs prodflaskapi:20231228
 
 ### Docker 프로세스 확인
 현재 구동중인 도커 프로세스를 확인하기 위해선 `docker ps` 혹은 `doscker ps -a`를 이용한다.

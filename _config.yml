@@ -1,5 +1,8 @@
 # WhatATheme
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # URL of the Site
 url: https://blog.bouldermon.com
