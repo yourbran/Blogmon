@@ -291,7 +291,8 @@ a.navbar-item.is-active {
 
 #post {
     @media (min-width: 768px) {
-        margin: auto 2.5vmax;
+        width: 768px;
+        margin: 0 auto 2.5vmax;
     }
     a {
         text-decoration: underline;
@@ -324,10 +325,10 @@ a.navbar-item.is-active {
             background-color: grey;
         }
         img, iframe {
-            max-width: calc(100% - 25vw);
+            max-width: calc(100% - 5vw);
             margin: 0.25rem auto;
             @media (max-width: 768px) {
-                max-width: calc(100% - 5vw);
+                max-width: calc(100% - 10vw);
             }
         }
         img + em { // 이미지 캡션을 위한 css
@@ -344,6 +345,9 @@ a.navbar-item.is-active {
     .container {
         margin: 2.5rem auto;
         word-break: break-word;
+        // @media (max-width: 768px) {
+        //     max-width: 768px;
+        // }
         max-width: -webkit-fill-available;
     }
 
