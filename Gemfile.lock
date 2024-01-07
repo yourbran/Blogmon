@@ -288,6 +288,7 @@ DEPENDENCIES
   jekyll-feed
   kramdown-parser-gfm
   rack
+  rouge
   tzinfo (~> 1.2)
   tzinfo-data
   wdm

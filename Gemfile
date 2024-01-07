@@ -31,6 +31,7 @@ end
 gem "wdm", :install_if => Gem.win_platform?
 
 gem "kramdown-parser-gfm"
+gem "rouge"
 
 # github action
 gem 'github-pages', '~> 228'
