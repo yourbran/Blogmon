@@ -1,3 +1,7 @@
+- name: 블로그몬 CDN 적용
+  link: /project/blogmoncdnpart1
+  image: https://cdn.bouldermon.com/project00002/thumbnail.jpg
+  description: CloudFront와 S3를 이용한 CDN 구축
 - name: MSA환경 API서버 구축
   link: /project/flaskapiserver
   image: /assets/images/20231229_flaskanddocker/thumbnail.jpg
@@ -18,7 +22,3 @@
   link: /project/references
   image: /assets/images/202309130_references/references_front.png
   description: 블로그 기술스택 및 명령어 참고사항
-- name: Test Page
-  link: /project/testpage
-  image: https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659_960_720.jpg
-  description: 테스트 페이지
