@@ -1,10 +1,10 @@
 - name: 블로그몬 CDN 적용
   link: /project/blogmoncdnpart1
-  image: https://cdn.bouldermon.com/project00002/thumbnail.jpg
+  image: https://cdn.bouldermon.com/project/project00002/thumbnail.jpg
   description: CloudFront와 S3를 이용한 CDN 구축
 - name: MSA환경 API서버 구축
   link: /project/flaskapiserver
-  image: /assets/images/20231229_flaskanddocker/thumbnail.jpg
+  image: https://cdn.bouldermon.com/project/project00001/thumbnail.jpg
   description: Flask + Docker를 이용한 API서버 구축
 - name: Bitbucket&Bamboo 도입
   link: /project/cicdupgrade2023
