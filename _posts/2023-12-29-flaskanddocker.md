@@ -3,7 +3,7 @@ title: Flask + uWSGI + Docker를 이용한 API서버 구축
 layout: post
 permalink: /project/flaskapiserver
 posttype: project
-post-image: /assets/images/20231229_flaskanddocker/initial_image.jpg
+post-image: https://cdn.bouldermon.com/project/project00001/initial_image.jpg
 description: Jekyll Website로부터의 요청을 처리하는 API서버가 필요했다. Micro Web Framework인 Flask를 이용해 가볍고 확장 가능한 서버를 구축하려했고 Docker를 이용해 MSA환경으로 구성했다.
 tags:
 - TECH
@@ -15,7 +15,7 @@ tags:
 ## 배경
 Static Site인 Jekyll로부터의 요청을 동적으로 처리해야 하는 API서버가 필요했다. Flask를 이용해 API서버를 구축하며, Jekyll이 올라가 있는 AWS Lightsail instance에서 같이 서비스될 것이다. WEB서버는 nginx로 이미 구성되어 있는 상태다.
 <p align="center">
-  <img src="/assets/images/20231229_flaskanddocker/overview.png" />
+  <img src="https://cdn.bouldermon.com/project/project00001/overview.png" />
 </p>
 
 ## Flask (Python 3.7) 설치
@@ -150,14 +150,14 @@ prodflaskapi:20231228
 
 Docker가 정상적으로 실행되었는지 확인한다. `-v` 혹은 `-u` 옵션의 문제가 있을 경우 docker 프로세스가 정상적으로 올라오지 않는다.
 <p align="center">
-  <img src="/assets/images/20231229_flaskanddocker/dockerrunuwsgi.png" />
+  <img src="https://cdn.bouldermon.com/project/project00001/dockerrunuwsgi.png" />
   <em>docker 프로세스가 정상적으로 올라왔는지 확인</em>
 </p>
 
 docker 프로세스가 정상적으로 올라오면 `-v` 옵션에 명시된 **host경로**에서 `flask.socket`과 log파일 접근이 가능하다.
 
 <p align="center">
-  <img src="/assets/images/20231229_flaskanddocker/host_socket_path.png" />
+  <img src="https://cdn.bouldermon.com/project/project00001/host_socket_path.png" />
   <em>host에서 docker에서 생성한 flask.socket에 접근 가능</em>
 </p>
 
@@ -171,6 +171,6 @@ uwsgi_pass unix:/home/ec2-user/app/apiServer/socket/flask.sock;
 
 `flask.socket`파일을 통해 host의 nginx와 docker의 flaskAPI가 통신할 수 있게 된다.
 <p align="center">
-  <img src="/assets/images/20231229_flaskanddocker/success_docker_log.png" />
+  <img src="https://cdn.bouldermon.com/project/project00001/success_docker_log.png" />
   <em>docker logs를 통해 정상 동작 확인</em>
 </p>
