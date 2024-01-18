@@ -1,23 +1,23 @@
 - name: 블로그몬 CDN 적용
   link: /project/blogmoncdnpart1
   image: https://cdn.bouldermon.com/project/project00002/thumbnail.jpg
-  description: CloudFront와 S3를 이용한 CDN 구축
+  description: Route53 + CloudFront + S3
 - name: MSA환경 API서버 구축
   link: /project/flaskapiserver
   image: https://cdn.bouldermon.com/project/project00001/thumbnail.jpg
-  description: Flask + Docker를 이용한 API서버 구축
-- name: Bitbucket&Bamboo 도입
+  description: Docker + uWSGI + Flask
+- name: CI/CD 도구 전환
   link: /project/cicdupgrade2023
   image: /assets/images/20231024_cicdupgrade2023/CI_CD_pipeline_image_front.png
-  description: 사내 표준 CI/CD 도입
-- name: Kiosk API서버 인프라 구성
+  description: Gitlab/Jenkins → Bitbucket/Bamboo
+- name: API서버 인프라 구성
   link: /project/kioskapiprj
   image: /assets/images/20230108_kioskPrj/kioskPrj_front.png
-  description: 신규 API서버 도입에 따른 설계 및 구현
+  description: Kiosk API서버 도입에 따른 설계
 - name: PDA 고도화 프로젝트
   link: /project/pdaprj2021
   image: /assets/images/20230208_pdaprj2021/pdaPrj_front.png
-  description: PL로서 투입됬던 첫번째 프로젝트로 당시 과업내역 정리
+  description: 관리자 및 사용자 사용성 개선
 - name: 개발 참고사항
   link: /project/references
   image: /assets/images/202309130_references/references_front.png
