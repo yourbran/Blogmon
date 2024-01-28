@@ -1,7 +1,7 @@
 - name: BMONZ 서비스 구축 Part 1
   link: /project/bmonzpart1
   image: https://cdn.bouldermon.com/project/project00003/thumbnail.jpg
-  description: API시스템 개발환경 구성
+  description: Docker + Springboot + IntelliJ
 - name: 블로그몬 CDN 적용
   link: /project/blogmoncdnpart1
   image: https://cdn.bouldermon.com/project/project00002/thumbnail.jpg
