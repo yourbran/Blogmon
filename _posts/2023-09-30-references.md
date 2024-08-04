@@ -43,6 +43,13 @@ Jekyll은 여러개의 configuration file을 지정할 수 있도록 되어있�
 
 * * *
 
+# Chromedriver 설치
+### 설치 URL
+`wget -N https://storage.googleapis.com/chrome-for-testing-public/119.0.6045.105/linux64/chromedriver-linux64.zip`
+
+
+* * *
+
 # Flask
 ### Flask 구동
 #### `flask run`
@@ -97,6 +104,11 @@ docker run -d --user 1000 --name prodflaskApi -v /home/ec2-user/app/apiServer/so
 > #### docker stop *CONTAINERID*
 
 도커 프로세스 중지는 *CONATAINER ID*를 기준으로 진행한다.
+
+### Docker 컨테이너 삭제
+> #### docker rm *CONTAINERID*
+
+도커 프로세스 삭제는 *CONATAINER ID*를 기준으로 진행한다.
 
 ### Docker image 삭제
 > #### docker rmi *IMAGEID*
