@@ -1,11 +1,8 @@
-- name: BMONZ 서비스 구축 Part 2
-  link: /project/bmonzpart2
-  image: https://cdn.bouldermon.com/project/project00004/thumbnail.jpg
-  description: Github + CodeBuild + ECR
+
 - name: BMONZ 서비스 구축 Part 1
   link: /project/bmonzpart1
   image: https://cdn.bouldermon.com/project/project00003/thumbnail.jpg
-  description: Docker + Springboot + IntelliJ
+  description: Springboot + Docker + AWS
 - name: 블로그몬 CDN 적용
   link: /project/blogmoncdnpart1
   image: https://cdn.bouldermon.com/project/project00002/thumbnail.jpg
